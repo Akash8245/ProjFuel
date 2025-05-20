@@ -1,0 +1,15 @@
+{
+  "name": "ProjFuel",
+  "short_name": "ProjFuel",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#000000",
+  "icons": [
+    {
+      "src": "/logo.jpeg",
+      "sizes": "48x48",
+      "type": "image/x-icon"
+    }
+  ]
+}
