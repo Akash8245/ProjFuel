@@ -157,7 +157,7 @@ function Hero() {
         >
           <div className="stat">
             <span>10+</span>
-            <p>Years of Experience</p>
+            <p>Projects Completed</p>
           </div>
           <div className="stat">
             <span>15K+</span>
@@ -332,7 +332,7 @@ function Projects() {
     {
       title: 'DocConnect',
       image: proj1,
-      description: 'A MERN Stack app Built to connect doctors and patients with festures like video calling, appointment booking, and more.'
+      description: 'A MERN Stack app Built to connect doctors and patients with feature like video calling, appointment booking, and more.'
     },
     {
       title: 'Stock Market APP',
@@ -342,8 +342,8 @@ function Projects() {
     {
       title: 'MediCrae',
       image: proj3,
-      description: 'A E-commerce app built with Java and HTML,Css, Has features like product listing, cart, checkout, and more.'
-    }
+      description: 'A E-commerce app built with Java and HTML,CSS, Has features like product listing, cart, checkout, and more.'
+    },
   ];
   return (
     <section id="projects" className="projects">
