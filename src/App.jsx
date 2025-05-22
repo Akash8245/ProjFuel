@@ -21,6 +21,9 @@ import devTechImage from './assets/dev-tech.jpg';
 import proj1 from './assets/proj1.png';
 import proj2 from './assets/proj2.png';
 import proj3 from './assets/proj3.png';
+import brain from './assets/Brain.jpg'
+import UIX from './assets/UI.png'
+import five from './assets/5+.png'
 
 function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -335,6 +338,11 @@ function Projects() {
       description: 'A MERN Stack app Built to connect doctors and patients with feature like video calling, appointment booking, and more.'
     },
     {
+      title: 'Brain tumor prediction',
+      image: brain,
+      description: 'A medical image detection AI model built to detect brain tumor predection using MRI scanning images of real patients, Built using Python and Pytorch.'
+    },
+    {
       title: 'Stock Market APP',
       image: proj2,
       description: 'A stock market web app built with Java and JSP, Has features like real time stock price, buy and sell stocks, and more.'
@@ -343,6 +351,16 @@ function Projects() {
       title: 'MediCrae',
       image: proj3,
       description: 'A E-commerce app built with Java and HTML,CSS, Has features like product listing, cart, checkout, and more.'
+    },
+    {
+      title: 'Fitness app UI/UX',
+      image: UIX,
+      description: 'A clean and intuitive UI/UX design created for a fitness wearable device like Fitbit, focusing on user-friendly navigation, real-time health tracking.'
+    },
+      {
+      title: 'More.... ',
+      image: five,
+      description: ''
     },
   ];
   return (
