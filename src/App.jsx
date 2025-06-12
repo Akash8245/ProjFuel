@@ -18,12 +18,12 @@ import techImage from './assets/tech.jpg';
 import aiTechImage from './assets/ai-tech.jpg';
 import cloudTechImage from './assets/cloud-tech.jpg';
 import devTechImage from './assets/dev-tech.jpg';
-import proj1 from './assets/proj1.png';
-import proj2 from './assets/proj2.png';
-import proj3 from './assets/proj3.png';
-import brain from './assets/Brain.jpg'
-import UIX from './assets/UI.png'
-import five from './assets/5+.png'
+import DSLR from './assets/dslr.png'
+import two from './assets/two.png'
+import three from './assets/three.png'
+
+
+
 
 function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -138,7 +138,7 @@ function Hero() {
             </p>
             <div className="hero-cta">
               <a 
-                href="https://instagram.com/projfuel" 
+                href="https://wa.me/6364059064?text=Hi%20ProjFuel%2C%20I'm%20interested%20in%20your%20services%20like%20Digital%20Marketing%2C%20Web%20%26%20App%20Development%2C%20or%20Social%20Media%20Management.%20Please%20share%20more%20details." 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="cta-btn"
@@ -163,7 +163,7 @@ function Hero() {
             <p>Projects Completed</p>
           </div>
           <div className="stat">
-            <span>15K+</span>
+            <span>20K+</span>
             <p>Revenue Generated</p>
           </div>
           <div className="stat">
@@ -209,21 +209,40 @@ function Services() {
   const services = [
     {
       icon: aiIcon,
-      title: "AI & Automation",
-      description: "Leverage the power of AI agents and agentic AI to automate complex tasks, enhance decision-making, and drive innovation in your business processes.",
-      features: ["AI Agents Development", "Process Automation", "Intelligent Decision Systems", "Custom AI Solutions"]
+title: "Digital Marketing",
+description: "Boost your online presence and drive business growth with data-driven digital marketing strategies, powered by the latest in AI and automation.",
+features: [
+  "SEO & Content Marketing",
+  "Social Media Management",
+  "AI-Powered Ad Campaigns",
+  "Performance Analytics & Reporting"
+]
+
     },
     {
-      icon: cloudIcon,
-      title: "Web Development",
-      description: "Create stunning, high-performance websites and e-commerce platforms that drive conversions and deliver exceptional user experiences.",
-      features: ["E-commerce Development", "Landing Pages", "Custom Websites", "Web Applications"]
+icon: cloudIcon,
+title: "Web & App Development",
+description: "Design and develop high-performance websites and mobile apps tailored to your brand, delivering seamless experiences and driving business growth.",
+features: [
+  "Responsive Web Design",
+  "Mobile App Development",
+  "E-commerce Solutions",
+  "Custom Web Applications"
+]
+
     },
     {
-      icon: developmentIcon,
-      title: "App Development",
-      description: "Build powerful, scalable mobile and desktop applications that meet your specific business needs and user requirements.",
-      features: ["Mobile Apps", "Desktop Applications", "Cross-platform Solutions", "Custom Software"]
+icon: developmentIcon,
+title: "Social Media Management",
+description: "Effectively manage your brand's presence across all major social platforms with tailored strategies, engaging content, and data-driven insights.",
+features: [
+  "Content Creation & Scheduling",
+  "Platform Strategy & Optimization",
+  "Community Engagement",
+  "Analytics & Performance Tracking"
+]
+
+
     },
     {
       icon: consultingIcon,
@@ -296,7 +315,7 @@ function Achievements() {
         >
           <h3>
             <CountUp 
-              end={15} 
+              end={20} 
               duration={2.5} 
               suffix="K+" 
               enableScrollSpy
@@ -329,39 +348,29 @@ function Achievements() {
   );
 }
 
-// --- Projects Section ---
 function Projects() {
   const dummyProjects = [
     {
-      title: 'DocConnect',
-      image: proj1,
-      description: 'A MERN Stack app Built to connect doctors and patients with feature like video calling, appointment booking, and more.'
+      title: 'Book My DSLR',
+      image: DSLR,
+      description: 'A professional website for renting high-quality camera equipment, designed to provide photographers and videographers with easy access to premium gear.',
+      link:'www.bookmydslr.com'
     },
     {
-      title: 'Brain tumor prediction',
-      image: brain,
-      description: 'A medical image detection AI model built to detect brain tumor predection using MRI scanning images of real patients, Built using Python and Pytorch.'
+      title: 'Annapoornaa Interio',
+      image: two,
+      description: 'A sophisticated website for a leading interior design and architecture firm, showcasing innovative design solutions and exceptional craftsmanship.',
+      link:'www.annapoornaainterio.com'
+
     },
     {
-      title: 'Stock Market APP',
-      image: proj2,
-      description: 'A stock market web app built with Java and JSP, Has features like real time stock price, buy and sell stocks, and more.'
+      title: 'Suyoginfra Solutions',
+      image: three,
+      description: 'A comprehensive website for a well-established infrastructure company, highlighting their expertise in delivering robust and sustainable solutions.',
+      link:'www.suyoginfrasolutions.com'
+
     },
-    {
-      title: 'MediCrae',
-      image: proj3,
-      description: 'A E-commerce app built with Java and HTML,CSS, Has features like product listing, cart, checkout, and more.'
-    },
-    {
-      title: 'Fitness app UI/UX',
-      image: UIX,
-      description: 'A clean and intuitive UI/UX design created for a fitness wearable device like Fitbit, focusing on user-friendly navigation, real-time health tracking.'
-    },
-      {
-      title: 'More.... ',
-      image: five,
-      description: ''
-    },
+
   ];
   return (
     <section id="projects" className="projects">
@@ -372,6 +381,7 @@ function Projects() {
             <img src={proj.image} alt={proj.title} className="project-image" width="320" height="200" loading="lazy" />
             <h3>{proj.title}</h3>
             <p>{proj.description}</p>
+            <a href={`https://${proj.link}`} target="_blank" rel="noopener noreferrer" className="project-visit-btn">Visit</a>
           </div>
         ))}
       </div>
@@ -388,42 +398,39 @@ function Footer() {
             <img src={logo} alt="ProjFuel" className="footer-logo" />
             <span className="footer-title">ProjFuel</span>
           </div>
-          <p>
-            Leading the digital transformation journey for enterprises worldwide with 
-            innovative IT solutions and cutting-edge technology.
-          </p>
+          <p>Transforming ideas into digital excellence</p>
         </div>
         <div className="footer-links">
           <h3>Services</h3>
           <ul>
-            <li><a href="#ai">AI & Automation</a></li>
-            <li><a href="#web">Web Development</a></li>
-            <li><a href="#app">App Development</a></li>
+            <li><a href="#ai">Digital Marketing</a></li>
+            <li><a href="#web">Web & App Development</a></li>
+            <li><a href="#app">Social Media Management</a></li>
             <li><a href="#guidance">Project Guidance</a></li>
           </ul>
         </div>
-        <div className="footer-contact" id="footer-contact">
+        <div className="footer-contact">
           <h3>Contact</h3>
           <ul>
             <li>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 13.43C13.7231 13.43 15.12 12.0331 15.12 10.31C15.12 8.58687 13.7231 7.19 12 7.19C10.2769 7.19 8.88 8.58687 8.88 10.31C8.88 12.0331 10.2769 13.43 12 13.43Z" stroke="currentColor" strokeWidth="1.5"/>
-                <path d="M3.62001 8.49C5.59001 -0.169998 18.42 -0.159998 20.38 8.5C21.53 13.58 18.37 17.88 15.6 20.54C13.59 22.48 10.41 22.48 8.39001 20.54C5.63001 17.88 2.47001 13.57 3.62001 8.49Z" stroke="currentColor" strokeWidth="1.5"/>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
               </svg>
-              <span>Bangalore, India</span>
+              <a href="https://maps.app.goo.gl/wdmqeNjpJRyqppRd8" target="_blank" rel="noopener noreferrer">Bangalore, India</a>
             </li>
             <li>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M17 20.5H7C4 20.5 2 19 2 15.5V8.5C2 5 4 3.5 7 3.5H17C20 3.5 22 5 22 8.5V15.5C22 19 20 20.5 17 20.5Z" stroke="currentColor" strokeWidth="1.5" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
-                <path d="M17 9L13.87 11.5C12.84 12.32 11.15 12.32 10.12 11.5L7 9" stroke="currentColor" strokeWidth="1.5" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
               </svg>
               <a href="mailto:projfuel@gmail.com">projfuel@gmail.com</a>
             </li>
             <li>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M17 2H7C4.23858 2 2 4.23858 2 7V17C2 19.7614 4.23858 22 7 22H17C19.7614 22 22 19.7614 22 17V7C22 4.23858 19.7614 2 17 2Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                <path d="M16 11.37C16.1234 12.2022 15.9813 13.0522 15.5938 13.799C15.2063 14.5458 14.5931 15.1514 13.8416 15.5297C13.0901 15.9079 12.2384 16.0396 11.4078 15.9059C10.5771 15.7723 9.80976 15.3801 9.21484 14.7852C8.61991 14.1902 8.22773 13.4229 8.09406 12.5922C7.9604 11.7615 8.09206 10.9099 8.47032 10.1584C8.84858 9.40685 9.45418 8.79374 10.201 8.40624C10.9478 8.01874 11.7978 7.87658 12.63 8C13.4789 8.12588 14.2648 8.52146 14.8717 9.12831C15.4785 9.73515 15.8741 10.5211 16 11.37Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                <path d="M17.5 6.5H17.51" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
               </svg>
               <a href="https://instagram.com/projfuel" target="_blank" rel="noopener noreferrer">@projfuel</a>
             </li>
@@ -431,7 +438,7 @@ function Footer() {
         </div>
       </div>
       <div className="footer-bottom">
-        <p>© 2025 ProjFuel. All rights reserved.</p>
+        <p>&copy; 2024 ProjFuel. All rights reserved.</p>
       </div>
     </footer>
   );
