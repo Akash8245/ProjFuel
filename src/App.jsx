@@ -21,6 +21,8 @@ import devTechImage from './assets/dev-tech.jpg';
 import DSLR from './assets/dslr.png'
 import two from './assets/two.png'
 import three from './assets/three.png'
+import msmeCert from './assets/msme3.jpeg';
+import ncsCert from './assets/national-career-service-ncs-national-career-service-.jpg';
 
 
 
@@ -51,7 +53,7 @@ function Navbar() {
         <div className={`navbar-links ${mobileMenuOpen ? 'active' : ''}`}>
           <a href="#services" onClick={() => setMobileMenuOpen(false)}>Services</a>
           <a href="#projects" onClick={() => setMobileMenuOpen(false)}>Projects</a>
-          <a href="#footer-contact" onClick={() => setMobileMenuOpen(false)}>Contact</a>
+          <a href="https://wa.me/6364059064?text=Hi%20ProjFuel%2C%20I'm%20interested%20in%20your%20services%20like%20Digital%20Marketing%2C%20Web%20%26%20App%20Development%2C%20or%20Social%20Media%20Management.%20Please%20share%20more%20details." onClick={() => setMobileMenuOpen(false)}>Contact</a>
         </div>
         <button className="mobile-menu-btn" onClick={toggleMobileMenu}>
           {mobileMenuOpen ? '✕' : '☰'}
@@ -389,6 +391,84 @@ function Projects() {
   );
 }
 
+function Certifications() {
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
+  return (
+    <section id="certifications" className="certifications" ref={ref}>
+      <div className="certifications-container">
+        <motion.div
+          className="certifications-header"
+          initial={{ opacity: 0, y: 30 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6 }}
+        >
+          <h2>Government Certifications</h2>
+          <p>Recognized and certified by the Government of India for our commitment to excellence and quality standards</p>
+        </motion.div>
+        
+        <div className="certifications-grid">
+          <motion.div
+            className="certification-card"
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={inView ? { opacity: 1, scale: 1 } : {}}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            whileHover={{ scale: 1.05 }}
+          >
+            <div className="certification-image">
+              <img 
+                src={msmeCert} 
+                alt="MSME Certification" 
+                width="200" 
+                height="150" 
+                loading="lazy"
+              />
+            </div>
+            <div className="certification-content">
+              <h3>MSME Certified</h3>
+              <p>Micro, Small and Medium Enterprises (MSME) certification from the Government of India, recognizing our contribution to the nation's economic growth and development.</p>
+              <div className="udyam-number">
+                <span>UDYAM-KR-03-0556814</span>
+              </div>
+              <div className="certification-badge">
+                <span>Government Recognized</span>
+              </div>
+            </div>
+          </motion.div>
+
+          <motion.div
+            className="certification-card"
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={inView ? { opacity: 1, scale: 1 } : {}}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            whileHover={{ scale: 1.05 }}
+          >
+            <div className="certification-image">
+              <img 
+                src={ncsCert} 
+                alt="National Career Service Certification" 
+                width="200" 
+                height="150" 
+                loading="lazy"
+              />
+            </div>
+            <div className="certification-content">
+              <h3>NCS Certified</h3>
+              <p>National Career Service (NCS) certification under the Ministry of Labour & Employment, Government of India, validating our professional standards and service quality.</p>
+              <div className="certification-badge">
+                <span>Ministry Approved</span>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function Footer() {
   return (
     <footer className="footer">
@@ -453,6 +533,7 @@ function App() {
       <Services />
       <Achievements />
       <Projects />
+      <Certifications />
       <Footer />
     </div>
   );
