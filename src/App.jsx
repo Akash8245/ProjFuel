@@ -21,6 +21,7 @@ import devTechImage from './assets/dev-tech.jpg';
 import DSLR from './assets/dslr.png'
 import two from './assets/two.png'
 import three from './assets/three.png'
+import RK from './assets/RK.png'
 import msmeCert from './assets/msme3.jpeg';
 import ncsCert from './assets/national-career-service-ncs-national-career-service-.jpg';
 
@@ -161,16 +162,16 @@ function Hero() {
           ref={ref}
         >
           <div className="stat">
-            <span>10+</span>
+            <span>16+</span>
             <p>Projects Completed</p>
           </div>
           <div className="stat">
-            <span>20K+</span>
+            <span>72K+</span>
             <p>Revenue Generated</p>
           </div>
           <div className="stat">
-            <span>98%</span>
-            <p>Client Satisfaction</p>
+            <span>100%</span>
+            <p>What Makes Us Awesome <br />100% Client Satisfaction <br />( Revisions till client is satisfied )</p>
           </div>
         </div>
       </motion.div>
@@ -299,7 +300,7 @@ function Achievements() {
         >
           <h3>
             <CountUp 
-              end={10} 
+              end={16} 
               duration={2.5} 
               suffix="+" 
               enableScrollSpy
@@ -317,7 +318,7 @@ function Achievements() {
         >
           <h3>
             <CountUp 
-              end={20} 
+              end={72} 
               duration={2.5} 
               suffix="K+" 
               enableScrollSpy
@@ -335,7 +336,7 @@ function Achievements() {
         >
           <h3>
             <CountUp 
-              end={98} 
+              end={100} 
               duration={2.5} 
               suffix="%" 
               enableScrollSpy
@@ -343,7 +344,7 @@ function Achievements() {
               scrollSpyDelay={200}
             />
           </h3>
-          <p>Client Satisfaction Rate</p>
+          <p>What Makes Us Awesome <br />100% Client Satisfaction <br />( Revisions till client is satisfied )</p>
         </motion.div>
       </div>
     </section>
@@ -352,6 +353,13 @@ function Achievements() {
 
 function Projects() {
   const dummyProjects = [
+    {
+      title: 'RK Doors',
+      image: RK,
+      description: ['Billing Software', 'Android App', 'ERP Management System'],
+      link:'play.google.com/store/apps/details?id=com.akash8245.rkdoors',
+      isBulletList: true
+    },
     {
       title: 'Book My DSLR',
       image: DSLR,
@@ -382,7 +390,15 @@ function Projects() {
           <div className="project-card" key={idx}>
             <img src={proj.image} alt={proj.title} className="project-image" width="320" height="200" loading="lazy" />
             <h3>{proj.title}</h3>
-            <p>{proj.description}</p>
+            {proj.isBulletList ? (
+              <ul className="project-description-list">
+                {proj.description.map((item, i) => (
+                  <li key={i}>{item}</li>
+                ))}
+              </ul>
+            ) : (
+              <p>{proj.description}</p>
+            )}
             <a href={`https://${proj.link}`} target="_blank" rel="noopener noreferrer" className="project-visit-btn">Visit</a>
           </div>
         ))}
